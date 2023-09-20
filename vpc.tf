@@ -28,12 +28,6 @@ module "vpc" {
   public_subnets          = [for k, v in local.azs : cidrsubnet(var.vpc_cidr, 8, k + 4)]
   public_route_table_tags = { "Auxillary name" = format("${local.name}-public-route-table") }
 
-  public_subnet_tags = {
-
-    "kubernetes.io/role/elb" = 1
-
-  }
-
   #############################################################################
   # Public Network ACLs
   #############################################################################

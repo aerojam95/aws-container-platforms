@@ -44,12 +44,6 @@ module "vpc" {
   private_subnets          = [for k, v in local.azs : cidrsubnet(var.vpc_cidr, 8, k)]
   private_route_table_tags = { "Auxillary name" = format("${local.name}-private-route-table") }
 
-  private_subnet_tags = {
-
-    "kubernetes.io/role/internal-elb" = 1
-
-  }
-
   #############################################################################
   # Private Network ACLs
   #############################################################################

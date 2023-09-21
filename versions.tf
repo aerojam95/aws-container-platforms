@@ -14,9 +14,9 @@ terraform {
   }
   # S3 bucket being used as a  remote backend for AWS deployment, needs to be created before any terraform operations
   backend "s3" {
-    bucket  = "dvt-acloud-kubernetes-terraform"
+    bucket  = ""
     region  = "eu-west-2"
-    key     = "cp/e2e-ecs-fargate/terraform.tfstate"
+    key     = ""
     encrypt = true
   }
 }

@@ -40,7 +40,7 @@ module "ecs-service" {
         "container-name" = format("${local.name}-container")
       }
 
-      image              = "" # image required, ideally stored in regional AWS ECR
+      image              = ""
       interactive        = false
       memory             = 2048
       memory_reservation = 512

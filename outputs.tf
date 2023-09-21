@@ -360,7 +360,7 @@ output "ecs_cluster_logs_kms_key_policy" {
 }
 
 ###############################################################################
-# Alias
+# Alias for KMS key for CloudWatch log groups for ECS Cluster logs
 ###############################################################################
 
 output "ecs_cluster_logs_kms_aliases" {
@@ -496,7 +496,7 @@ output "ecs_service_logs_kms_key_policy" {
 }
 
 ###############################################################################
-# Alias
+# Alias for KMS key for CloudWatch log groups for ECS service logs
 ###############################################################################
 
 output "ecs_service_logs_kms_aliases" {
@@ -630,7 +630,7 @@ output "alb_logs_s3_bucket_kms_key_policy" {
 }
 
 ###############################################################################
-# Alias
+# Alias for KMS key for CloudWatch log groups for ALB S3 logs
 ###############################################################################
 
 output "alb_logs_s3_bucket_kms_aliases" {
@@ -660,6 +660,20 @@ output "cloudtrail_arn" {
 output "cloudtrail_bucket_domain_name" {
   description = "FQDN of the CloudTral S3 bucket"
   value       = try(module.cloudtrail.bucket_domain_name, null)
+}
+
+###############################################################################
+#  IAM role for CT
+###############################################################################
+
+output "aws_ct_iam_role_iam_role_arn" {
+  description = "ARN of AWS CloudTrail IAM role"
+  value       = try(aws_iam_role.aws_ct_iam_role.arn, "")
+}
+
+output "aws_ct_iam_role_iam_role_name" {
+  description = "Name of AWS CloudTrail IAM role"
+  value       = try(aws_iam_role.aws_ct_iam_role.name, "")
 }
 
 ###############################################################################
@@ -706,7 +720,7 @@ output "ct_logs_s3_bucket_kms_key_policy" {
 }
 
 ###############################################################################
-# Alias
+# Alias for KMS key for CloudWatch log groups for CT S3 logs
 ###############################################################################
 
 output "ct_logs_s3_bucket_kms_aliases" {
@@ -734,7 +748,7 @@ output "ct_logs_cw_logs_bucket_kms_key_policy" {
 }
 
 ###############################################################################
-# Alias
+# Alias for KMS key for CloudWatch log groups for CT CW logs
 ###############################################################################
 
 output "ct_logs_cw_logs_kms_aliases" {

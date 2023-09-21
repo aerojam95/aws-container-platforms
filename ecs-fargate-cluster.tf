@@ -14,10 +14,10 @@ module "ecs-cluster" {
   # ECS cluster
   #############################################################################
 
-  cluster_name = format("${local.name}-cluster")
+  cluster_name = format("${local.name}-ecs-cluster")
 
   tags = merge(
-    { "Name" = format("${local.name}-cluster") },
+    { "Name" = format("${local.name}-ecs-cluster") },
     local.resource_tags
   )
 
@@ -39,5 +39,4 @@ module "ecs-cluster" {
   #############################################################################
 
   fargate_capacity_providers = var.fargate_capacity_providers
-
 }

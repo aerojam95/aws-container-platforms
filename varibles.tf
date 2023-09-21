@@ -182,7 +182,7 @@ variable "cluster_configuration" {
 }
 
 ###############################################################################
-# ECS cluster logs KMS key
+# CloudWatch Log Group
 ###############################################################################
 
 variable "cluster_cloudwatch_log_group_kms_key_id" {
@@ -192,7 +192,7 @@ variable "cluster_cloudwatch_log_group_kms_key_id" {
 }
 
 ###############################################################################
-# KMS key for CloudWatch log groups for ECS Cluster logs
+# KMS key statement for CloudWatch log groups for ECS Cluster logs
 ###############################################################################
 
 variable "ecs_cluster_logs_kms_key_statements" {

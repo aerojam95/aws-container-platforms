@@ -211,7 +211,7 @@ output "vpc_flow_log_kms_key_policy" {
 
 output "vpc_flow_log_kms_key_aliases" {
   description = "A map of aliases created and their attributes"
-  value       = module.vpc_flow_log_kms_key.aliases
+  value       = try(module.vpc_flow_log_kms_key.aliases, null)
 }
 
 ###############################################################################

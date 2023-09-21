@@ -40,7 +40,7 @@ module "ecs-service" {
         "container-name" = format("${local.name}-container")
       }
 
-      image              = "601324671139.dkr.ecr.eu-west-2.amazonaws.com/go-service:latest"
+      image              = ""
       interactive        = false
       memory             = 2048
       memory_reservation = 512

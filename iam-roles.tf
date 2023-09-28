@@ -318,11 +318,6 @@ data "aws_iam_policy_document" "aws_ct_iam_policy_document" {
       "${module.s3_bucket_ct_logs.s3_bucket_arn}/*",
       module.s3_bucket_ct_logs.s3_bucket_arn
     ]
-    condition {
-      test     = "ArnLike"
-      variable = "aws:SourceArn"
-      values   = [module.cloudtrail.cloudtrail_arn]
-    }
   }
 
   statement {
